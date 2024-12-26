@@ -87,7 +87,7 @@ for (const { name, colorId } of styles) {
 
 export default chog as any as Chog;
 
-interface Chog {
+export interface Chog {
   // chog function.
   (...text: unknown[]): string;
 
