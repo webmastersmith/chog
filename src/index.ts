@@ -19,6 +19,7 @@ const styles = [
   { name: 'dim', colorId: 2 },
   { name: 'italic', colorId: 3 },
   { name: 'underline', colorId: 4 },
+  { name: 'reset', colorId: 0 },
 ];
 const colorReset = '\x1b[0m';
 const setFgColor = (num: number) => `\x1b[${num}m`;
@@ -31,7 +32,7 @@ function chog(...txt: unknown[]) {
   const s = txt.map((item) => {
     return typeof item !== 'object' ? chog.buf + item + colorReset : inspect(item, false, null, true);
   });
-  console.log(s.join(' '));
+  console.log(s.join(`${chog.buf} ${colorReset}`));
   // reset buf
   chog.buf = '';
 }
@@ -86,7 +87,7 @@ for (const { name, colorId } of styles) {
 
 export default chog as any as Chog;
 
-export interface Chog {
+interface Chog {
   // chog function.
   (...text: unknown[]): string;
 
@@ -119,6 +120,7 @@ export interface Chog {
   readonly italic: Chog;
   readonly underline: Chog;
   readonly bolder: Chog;
+  readonly reset: Chog;
 }
 
 declare global {
@@ -152,5 +154,6 @@ declare global {
     readonly italic: String;
     readonly underline: String;
     readonly bolder: String;
+    readonly reset: String;
   }
 }
