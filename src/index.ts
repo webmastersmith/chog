@@ -123,6 +123,7 @@ export interface Chog {
   readonly reset: Chog;
 }
 
+// stop type error on Strings.
 declare global {
   export interface String {
     // fgColor

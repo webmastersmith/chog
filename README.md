@@ -8,7 +8,7 @@
 
 ```ts
 // download
-nmp i chog
+npm i chog
 
 // commonjs
 const chog = require('chog');
