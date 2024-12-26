@@ -35,7 +35,9 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "browser-util-inspect": "^0.2.0"
+    "@types/browser-util-inspect": "^0.2.4",
+    "browser-util-inspect": "^0.2.0",
+    "chog": "^0.0.6"
   },
   "homepage": "https://github.com/webmastersmith/chog.git#readme",
   "author": "Bryon Smith",

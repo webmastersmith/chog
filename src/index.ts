@@ -30,7 +30,7 @@ const setBgColorName = (color: string) => `${color}Bg`;
 function chog(...txt: unknown[]) {
   // separate objects
   const s = txt.map((item) => {
-    return typeof item !== 'object' ? chog.buf + item + colorReset : inspect(item, false, null, true);
+    return typeof item !== 'object' ? chog.buf + item + colorReset : inspect(item, false, Infinity, true);
   });
   console.log(s.join(`${chog.buf} ${colorReset}`));
   // reset buf
