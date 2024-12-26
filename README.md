@@ -58,7 +58,7 @@ chog.black.whiteBg('before red', " I'm italic red ".red.italic.underline.reset, 
 ![Automatic object destructure](images/obj.png)
 
 ```ts
-// Automatic web friendly object destructuring 👆.
+// Automatic web friendly 'util.inspect' object destructuring 👆.
 // Object and Array colors are fixed and cannot be altered.
 const obj = {
   a: 'a',
