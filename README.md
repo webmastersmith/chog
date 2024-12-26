@@ -93,3 +93,7 @@ const arr = [
 
 chog.blue.yellowBg('multiple javascript types', ' 64 '.red.reset, obj, arr, false, undefined, 'the end.');
 ```
+
+## License
+
+Published under the Apache-2.0 license. © Bryon Smith 2024.
