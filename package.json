@@ -1,0 +1,38 @@
+{
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    "require": {
+      "types": "./dist/index.d.cts",
+      "default": "./dist/index.cjs"
+    },
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "watch": "tsx watch ./src/index.ts",
+    "dev": "tsx ./src/index.ts",
+    "build": "pkgroll --clean-dist --sourcemap",
+    "prepac": "npm run build",
+    "pac": "npm version patch && git push --tags origin main && npm publish",
+    "dry": "npm publish --dry-run",
+    "pretest": "npm run build",
+    "test": "tsx ./index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "pkgroll": "^2.6.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "browser-util-inspect": "^0.2.0"
+  },
+  "homepage": "https://github.com/webmastersmith/pixx#readme"
+}
