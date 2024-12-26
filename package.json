@@ -1,4 +1,7 @@
 {
+  "name": "pixx",
+  "version": "0.0.78",
+  "description": "Simplified Chalk and Console.log with Web Friendly util.inspect for Arrays and Objects",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
@@ -34,5 +37,39 @@
   "dependencies": {
     "browser-util-inspect": "^0.2.0"
   },
-  "homepage": "https://github.com/webmastersmith/pixx#readme"
+  "homepage": "https://github.com/webmastersmith/chog.git#readme",
+  "author": "Bryon Smith",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/webmastersmith/pixx/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmastersmith/pixx.git"
+  },
+  "keywords": [
+    "console.log",
+    "log color",
+    "colorize",
+    "color",
+    "colour",
+    "colors",
+    "terminal",
+    "console",
+    "cli",
+    "string",
+    "ansi",
+    "style",
+    "styles",
+    "tty",
+    "formatting",
+    "shell",
+    "xterm",
+    "log",
+    "logging",
+    "command-line",
+    "text",
+    "object",
+    "array"
+  ]
 }

@@ -1,8 +1,9 @@
 # chog
 
-## Chalk and Console.log with util.inspect for objects.
+## Simplified Chalk and Console.log with Web Friendly util.inspect for Arrays and Objects
 
 - **This library modifies the String.prototype** for the current shell session.
+- Combines advanced color techniques to simplify console.log messages.
 
 ```ts
 // download
