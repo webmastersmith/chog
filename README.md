@@ -41,7 +41,7 @@ const styles = ['bolder', 'dim', 'italic', 'underline', 'reset'];
 
 ## Simple Example
 
-- ![Multiple items console.log with colors](./images/red.png)
+- ![Multiple items console.log with colors](images/red.png)(https://github.com/webmastersmith/chog/blob/9c2de53eb6dfb551c1ba1f269b951d5e5b7c7776/images/red.png)
 
 ```ts
 // see image 👆
@@ -52,7 +52,7 @@ chog.black.whiteBg('before red', " I'm italic red ".red.italic.underline.reset, 
 
 ## Advanced Example
 
-- ![Automatic object destructure](./images/obj.png)
+- ![Automatic object destructure](images/obj.png)
 
 ```ts
 // Automatic web friendly object destructuring 👆.

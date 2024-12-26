@@ -41,11 +41,11 @@
   "author": "Bryon Smith",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/webmastersmith/pixx/issues"
+    "url": "https://github.com/webmastersmith/chog.git"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webmastersmith/pixx.git"
+    "url": "git+https://github.com/webmastersmith/chog.git"
   },
   "keywords": [
     "console.log",
