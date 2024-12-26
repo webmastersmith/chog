@@ -26,7 +26,7 @@
     "pac": "npm version patch && git push --tags origin main && npm publish",
     "dry": "npm publish --dry-run",
     "pretest": "npm run build",
-    "test": "tsx ./index.ts"
+    "test": "tsx ./test.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
