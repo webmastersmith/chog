@@ -4,6 +4,7 @@
 
 - **This library modifies the String.prototype** for the current shell session.
 - Combines advanced color techniques to simplify console.log messages.
+- [NPM chog](https://www.npmjs.com/package/chog)
 
 ```ts
 // download
