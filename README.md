@@ -51,6 +51,9 @@ chog.blue('Danger Will Robinson!'.red, 'The message awaits...');
 chog.black.whiteBg('before red', " I'm italic red ".red.italic.underline.blackBg, 'after red.');
 // same as                                           reset must come last 👇
 chog.black.whiteBg('before red', " I'm italic red ".red.italic.underline.reset, 'after red.');
+
+// Types
+import { type Chog } from 'chog';
 ```
 
 ## Advanced Example
