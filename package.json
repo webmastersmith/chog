@@ -1,6 +1,6 @@
 {
   "name": "chog",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Simplified Chalk and Console.log with Web Friendly util.inspect for Arrays and Objects",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
