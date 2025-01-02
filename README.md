@@ -23,18 +23,19 @@ chog.black.whiteBg('before red', " I'm italic red ".red.italic.underline.blackBg
 
 ```ts
 // Colors
-const colors = ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray', 'grey'];
+const colors = [
+  'black', 'red',
+  'green', 'yellow',
+  'blue', 'magenta',
+  'cyan', 'white', '
+  gray', 'grey'
+];
 const backgroundColors = [
-  'blackBg',
-  'redBg',
-  'greenBg',
-  'yellowBg',
-  'blueBg',
-  'magentaBg',
-  'cyanBg',
-  'whiteBg',
-  'grayBg',
-  'greyBg',
+  'blackBg', 'redBg',
+  'greenBg', 'yellowBg',
+  'blueBg', 'magentaBg',
+  'cyanBg', 'whiteBg',
+  'grayBg', 'greyBg',
 ];
 const styles = ['bolder', 'dim', 'italic', 'underline', 'reset'];
 ```
