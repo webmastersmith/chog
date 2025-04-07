@@ -2,8 +2,9 @@
 
 ## Simplified Chalk and Console.log with Web Friendly util.inspect for Arrays and Objects
 
-- **This library modifies the String.prototype** for the current shell session.
+- **This library modifies the String.prototype, Number.prototype, and Boolean.prototype** for the current shell session.
 - Combines advanced color techniques to simplify console.log messages.
+- Add colors and styles to Strings, Numbers, and Booleans.
 - [NPM chog](https://www.npmjs.com/package/chog)
 
 ```ts
@@ -45,7 +46,7 @@ const styles = ['bolder', 'dim', 'italic', 'underline', 'reset'];
 
 ## Simple Example
 
-![Multiple items console.log with colors](images/red.png)
+![Multiple items console.log with colors](images/red2.png)
 
 ```ts
 // see image 👆
@@ -55,6 +56,12 @@ chog.blue('Danger Will Robinson!'.red, 'The message awaits...');
 chog.black.whiteBg('before red', " I'm italic red ".red.italic.underline.blackBg, 'after red.');
 // same as                                           reset must come last 👇
 chog.black.whiteBg('before red', " I'm italic red ".red.italic.underline.reset, 'after red.');
+
+// Numbers
+chog((123).red, (456).white.bolder.italic);
+
+// Booleans
+chog(true.green.underline.italic, false.blue.bolder);
 ```
 
 ## Advanced Example
@@ -95,7 +102,15 @@ const arr = [
   },
 ];
 
-chog.blue.yellowBg('multiple javascript types', ' 64 '.red.reset, obj, arr, false, undefined, 'the end.');
+chog.blue.yellowBg(
+  'multiple javascript types',
+  (64).red.reset,
+  obj,
+  arr,
+  false.greenBg,
+  undefined,
+  'the end.'
+);
 ```
 
 ## License

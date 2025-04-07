@@ -30,7 +30,9 @@ const setBgColorName = (color: string) => `${color}Bg`;
 function chog(...txt: unknown[]) {
   // separate objects
   const s = txt.map((item) => {
-    return typeof item !== 'object' ? chog.buf + item + colorReset : inspect(item, false, Infinity, true);
+    return typeof item !== 'object'
+      ? chog.buf + item + colorReset
+      : inspect(item, false, Number.POSITIVE_INFINITY, true);
   });
   console.log(s.join(`${chog.buf} ${colorReset}`));
   // reset buf
@@ -41,14 +43,38 @@ chog.buf = '';
 
 // set fg and bg colors on String.prototype.
 for (const { name, colorId } of colors) {
-  // set fgColor.
+  // set fgColor. -String
   Object.defineProperty(String.prototype, name, {
     get: function () {
       return setFgColor(colorId) + this + colorReset;
     },
   });
-  // set bgColor
+  // set bgColor -String
   Object.defineProperty(String.prototype, setBgColorName(name), {
+    get: function () {
+      return setBgColor(colorId) + this + colorReset;
+    },
+  });
+  // set fgColor. -Number
+  Object.defineProperty(Number.prototype, name, {
+    get: function () {
+      return setFgColor(colorId) + this + colorReset;
+    },
+  });
+  // set bgColor -Number
+  Object.defineProperty(Number.prototype, setBgColorName(name), {
+    get: function () {
+      return setBgColor(colorId) + this + colorReset;
+    },
+  });
+  // set fgColor. -Boolean
+  Object.defineProperty(Boolean.prototype, name, {
+    get: function () {
+      return setFgColor(colorId) + this + colorReset;
+    },
+  });
+  // set bgColor -Boolean
+  Object.defineProperty(Boolean.prototype, setBgColorName(name), {
     get: function () {
       return setBgColor(colorId) + this + colorReset;
     },
@@ -76,6 +102,18 @@ for (const { name, colorId } of styles) {
       return setFgColor(colorId) + this + colorReset;
     },
   });
+  // set Number.prototype styles
+  Object.defineProperty(Number.prototype, name, {
+    get: function () {
+      return setFgColor(colorId) + this + colorReset;
+    },
+  });
+  // set Boolean.prototype styles
+  Object.defineProperty(Boolean.prototype, name, {
+    get: function () {
+      return setFgColor(colorId) + this + colorReset;
+    },
+  });
   // set chog Styles
   Object.defineProperty(chog, name, {
     get: function () {
@@ -85,11 +123,12 @@ for (const { name, colorId } of styles) {
   });
 }
 
+// biome-ignore lint/suspicious/noExplicitAny:
 export default chog as any as Chog;
 
 export interface Chog {
   // chog function.
-  (...text: unknown[]): string;
+  (...text: unknown[]): string | number | boolean;
 
   // fgColor
   readonly black: Chog;
@@ -156,5 +195,71 @@ declare global {
     readonly underline: String;
     readonly bolder: String;
     readonly reset: String;
+  }
+
+  export interface Number {
+    // fgColor
+    readonly black: Number;
+    readonly red: Number;
+    readonly green: Number;
+    readonly yellow: Number;
+    readonly blue: Number;
+    readonly magenta: Number;
+    readonly cyan: Number;
+    readonly white: Number;
+    readonly gray: Number;
+    readonly grey: Number;
+
+    // bgColor
+    readonly blackBg: Number;
+    readonly redBg: Number;
+    readonly greenBg: Number;
+    readonly yellowBg: Number;
+    readonly blueBg: Number;
+    readonly magentaBg: Number;
+    readonly cyanBg: Number;
+    readonly whiteBg: Number;
+    readonly grayBg: Number;
+    readonly greyBg: Number;
+
+    // styles
+    readonly dim: Number;
+    readonly italic: Number;
+    readonly underline: Number;
+    readonly bolder: Number;
+    readonly reset: Number;
+  }
+
+  export interface Boolean {
+    // fgColor
+    readonly black: Boolean;
+    readonly red: Boolean;
+    readonly green: Boolean;
+    readonly yellow: Boolean;
+    readonly blue: Boolean;
+    readonly magenta: Boolean;
+    readonly cyan: Boolean;
+    readonly white: Boolean;
+    readonly gray: Boolean;
+    readonly grey: Boolean;
+
+    // bgColor
+    readonly blackBg: Boolean;
+    readonly redBg: Boolean;
+    readonly greenBg: Boolean;
+    readonly yellowBg: Boolean;
+    readonly blueBg: Boolean;
+    readonly magentaBg: Boolean;
+    readonly cyanBg: Boolean;
+    readonly whiteBg: Boolean;
+    readonly grayBg: Boolean;
+    readonly greyBg: Boolean;
+
+    // styles
+    readonly dim: Boolean;
+    readonly italic: Boolean;
+    readonly underline: Boolean;
+    readonly bolder: Boolean;
+    readonly reset: Boolean;
   }
 }
